@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useState, type ReactNode, type ReactElement } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useAlerts } from '../hooks/useAlerts'
 import { AlertPanel } from './AlertPanel'
@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { path: '/', label: 'Dashboard' },
 ]
 
-export function Layout({ children }: { children: ReactNode }) {
+export function Layout({ children }: { children: ReactNode }): ReactElement {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
   const { activeCount, togglePanel } = useAlerts()
